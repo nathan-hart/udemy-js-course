@@ -46,27 +46,52 @@
 
 /* Coding Challenge 3 */
 
-var bills = [124, 48, 268];
+// var bills = [124, 48, 268];
 
-var tips = [];
-var addedTips = [];
-bills.forEach((billValue) => {
-  if (billValue < 50) {
-    var twentyPercent = 0.2 * billValue;
-    var addedTwenty = twentyPercent + billValue;
-    tips.push(twentyPercent);
-    addedTips.push(addedTwenty);
-  } else if (billValue >= 50 && billValue < 200) {
-    var fifteenPercent = 0.15 * billValue;
-    var addedFifteen = fifteenPercent + billValue;
-    tips.push(fifteenPercent);
-    addedTips.push(addedFifteen);
-  } else {
-    var tenPercent = 0.1 * billValue;
-    var addedTen = tenPercent + billValue;
-    tips.push(tenPercent);
-    addedTips.push(addedTen);
-  }
-});
-console.log(tips);
-console.log(addedTips);
+// var tips = [];
+// var addedTips = [];
+// bills.forEach((billValue) => {
+//   if (billValue < 50) {
+//     var twentyPercent = 0.2 * billValue;
+//     var addedTwenty = twentyPercent + billValue;
+//     tips.push(twentyPercent);
+//     addedTips.push(addedTwenty);
+//   } else if (billValue >= 50 && billValue < 200) {
+//     var fifteenPercent = 0.15 * billValue;
+//     var addedFifteen = fifteenPercent + billValue;
+//     tips.push(fifteenPercent);
+//     addedTips.push(addedFifteen);
+//   } else {
+//     var tenPercent = 0.1 * billValue;
+//     var addedTen = tenPercent + billValue;
+//     tips.push(tenPercent);
+//     addedTips.push(addedTen);
+//   }
+// });
+// console.log(tips);
+// console.log(addedTips);
+
+
+/* Objects and properties */
+
+var nate = {
+  firstName: "Nate",
+  lastName: "Hart",
+  birthYear: 1991,
+  familyMembers: ["jase", "sam", "dave"],
+  job: "coder",
+  isMarried: true
+}
+
+console.log(nate.firstName)
+console.log(nate["lastName"])
+
+nate.job = "designer";
+console.log(nate.job)
+
+var jane = new Object();
+jane.name = "Jane";
+jane.birthYear = 1997
+jane.lastName = "smith"
+
+console.log(jane)
