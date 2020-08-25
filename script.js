@@ -44,9 +44,29 @@
 
 // console.log(isCoder);
 
-
 /* Coding Challenge 3 */
 
 var bills = [124, 48, 268];
 
-
+var tips = [];
+var addedTips = [];
+bills.forEach((billValue) => {
+  if (billValue < 50) {
+    var twentyPercent = 0.2 * billValue;
+    var addedTwenty = twentyPercent + billValue;
+    tips.push(twentyPercent);
+    addedTips.push(addedTwenty);
+  } else if (billValue >= 50 && billValue < 200) {
+    var fifteenPercent = 0.15 * billValue;
+    var addedFifteen = fifteenPercent + billValue;
+    tips.push(fifteenPercent);
+    addedTips.push(addedFifteen);
+  } else {
+    var tenPercent = 0.1 * billValue;
+    var addedTen = tenPercent + billValue;
+    tips.push(tenPercent);
+    addedTips.push(addedTen);
+  }
+});
+console.log(tips);
+console.log(addedTips);
