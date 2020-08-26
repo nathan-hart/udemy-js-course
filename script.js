@@ -73,6 +73,31 @@
 
 
 /* Objects and properties */
+// Object literal method
+// var nate = {
+//   firstName: "Nate",
+//   lastName: "Hart",
+//   birthYear: 1991,
+//   familyMembers: ["jase", "sam", "dave"],
+//   job: "coder",
+//   isMarried: true
+// }
+
+// console.log(nate.firstName)
+// console.log(nate["lastName"])
+
+// nate.job = "designer";
+// console.log(nate.job)
+
+// // new object syntax
+// var jane = new Object();
+// jane.name = "Jane";
+// jane.birthYear = 1997
+// jane.lastName = "smith"
+
+// console.log(jane)
+
+/* Objects and Methods */
 
 var nate = {
   firstName: "Nate",
@@ -80,18 +105,14 @@ var nate = {
   birthYear: 1991,
   familyMembers: ["jase", "sam", "dave"],
   job: "coder",
-  isMarried: true
+  isMarried: true,
+  calcAge: function() { //function expression to create METHOD within "Nate" var
+  // Only objects can have functions, arrays can't
+    var d = new Date();
+    
+    this.age = d.getFullYear() - this.birthYear // this allow us to access the property within the object
+  }
 }
+nate.calcAge();
 
-console.log(nate.firstName)
-console.log(nate["lastName"])
-
-nate.job = "designer";
-console.log(nate.job)
-
-var jane = new Object();
-jane.name = "Jane";
-jane.birthYear = 1997
-jane.lastName = "smith"
-
-console.log(jane)
+console.log(nate)
