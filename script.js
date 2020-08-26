@@ -98,50 +98,72 @@
 
 /* Objects and Methods */
 
-var nate = {
-  firstName: "Nate",
-  lastName: "Hart",
-  birthYear: 1991,
-  familyMembers: ["jase", "sam", "dave"],
-  job: "coder",
-  isMarried: true,
-  calcAge: function () {
-    //function expression to create METHOD within "Nate" var
-    // Only objects can have functions, arrays can't
-    var d = new Date();
+// var nate = {
+//   firstName: "Nate",
+//   lastName: "Hart",
+//   birthYear: 1991,
+//   familyMembers: ["jase", "sam", "dave"],
+//   job: "coder",
+//   isMarried: true,
+//   calcAge: function () {
+//     //function expression to create METHOD within "Nate" var
+//     // Only objects can have functions, arrays can't
+//     var d = new Date();
 
-    this.age = d.getFullYear() - this.birthYear; // this allow us to access the property within the object
-  },
-};
-nate.calcAge();
+//     this.age = d.getFullYear() - this.birthYear; // this allow us to access the property within the object
+//   },
+// };
+// nate.calcAge();
 
-console.log(nate.age);
+// console.log(nate.age);
 
-/* Coding Challenge 4 */
-var john = {
-  firstName: "John",
-  height: 192,
-  weight: 92,
-  bmiCalc: function () {
-    this.bmi = this.weight / (this.height * this.height);
-    return this.bmi;
-  },
-};
-var mark = {
-  firstName: "Mark",
-  height: 162,
-  weight: 85,
-  bmiCalc: function () {
-    this.bmi = this.weight / (this.height * this.height);
-    return this.bmi;
-  },
-};
+// /* Coding Challenge 4 */
+// var john = {
+//   firstName: "John",
+//   height: 192,
+//   weight: 92,
+//   bmiCalc: function () {
+//     this.bmi = this.weight / (this.height * this.height);
+//     return this.bmi;
+//   },
+// };
+// var mark = {
+//   firstName: "Mark",
+//   height: 162,
+//   weight: 85,
+//   bmiCalc: function () {
+//     this.bmi = this.weight / (this.height * this.height);
+//     return this.bmi;
+//   },
+// };
 
-function fatGuy() {
-  if (john.bmiCalc() > mark.bmiCalc()) {
-    return "John is the fattest with bmi of " + john.bmi;
-  } else {
-    return "Mark is the fattest with bmi of " + mark.bmi;
-  }
+// function fatGuy() {
+//   if (john.bmiCalc() > mark.bmiCalc()) {
+//     return "John is the fattest with bmi of " + john.bmi;
+//   } else {
+//     return "Mark is the fattest with bmi of " + mark.bmi;
+//   }
+// }
+// console.log(fatGuy());
+
+/* Loops and iteration */
+
+//FOR LOOPS
+var nate = ["Nate", "Hart", 1991, "rider"];
+
+for (var i = nate.length - 1; i >= 0; i--) {
+  // STARTING ITERATION; CONDITION; COUNTER UPDATE
+  console.log(nate[i]);
 }
-console.log(fatGuy());
+
+// for (var i = 0; i < nate.length; i++) {
+//   if (typeof nate[i] === "number") break;
+//   console.log(nate[i]);
+// }
+
+// WHILE LOOPS
+// i = 0;
+// while (i < nate.length) {
+//   console.log(nate[i]);
+//   i++;
+// }
