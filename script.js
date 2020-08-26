@@ -71,7 +71,6 @@
 // console.log(tips);
 // console.log(addedTips);
 
-
 /* Objects and properties */
 // Object literal method
 // var nate = {
@@ -106,13 +105,43 @@ var nate = {
   familyMembers: ["jase", "sam", "dave"],
   job: "coder",
   isMarried: true,
-  calcAge: function() { //function expression to create METHOD within "Nate" var
-  // Only objects can have functions, arrays can't
+  calcAge: function () {
+    //function expression to create METHOD within "Nate" var
+    // Only objects can have functions, arrays can't
     var d = new Date();
-    
-    this.age = d.getFullYear() - this.birthYear // this allow us to access the property within the object
-  }
-}
+
+    this.age = d.getFullYear() - this.birthYear; // this allow us to access the property within the object
+  },
+};
 nate.calcAge();
 
-console.log(nate)
+console.log(nate.age);
+
+/* Coding Challenge 4 */
+var john = {
+  firstName: "John",
+  height: 192,
+  weight: 92,
+  bmiCalc: function () {
+    this.bmi = this.weight / (this.height * this.height);
+    return this.bmi;
+  },
+};
+var mark = {
+  firstName: "Mark",
+  height: 162,
+  weight: 85,
+  bmiCalc: function () {
+    this.bmi = this.weight / (this.height * this.height);
+    return this.bmi;
+  },
+};
+
+function fatGuy() {
+  if (john.bmiCalc() > mark.bmiCalc()) {
+    return "John is the fattest with bmi of " + john.bmi;
+  } else {
+    return "Mark is the fattest with bmi of " + mark.bmi;
+  }
+}
+console.log(fatGuy());
