@@ -148,13 +148,13 @@
 
 /* Loops and iteration */
 
-//FOR LOOPS
-var nate = ["Nate", "Hart", 1991, "rider"];
+// //FOR LOOPS
+// var nate = ["Nate", "Hart", 1991, "rider"];
 
-for (var i = nate.length - 1; i >= 0; i--) {
-  // STARTING ITERATION; CONDITION; COUNTER UPDATE
-  console.log(nate[i]);
-}
+// for (var i = nate.length - 1; i >= 0; i--) {
+//   // STARTING ITERATION; CONDITION; COUNTER UPDATE
+//   console.log(nate[i]);
+// }
 
 // for (var i = 0; i < nate.length; i++) {
 //   if (typeof nate[i] === "number") break;
@@ -167,3 +167,74 @@ for (var i = nate.length - 1; i >= 0; i--) {
 //   console.log(nate[i]);
 //   i++;
 // }
+
+var restaurants = {
+  bills: [124, 48, 268, 180, 42],
+  billCalculator: function () {
+    for (var i = 0; i < this.bills.length; i++) {
+      if (this.bills[i] < 50) {
+        tip = this.bills[i] * 0.2;
+        total = this.bills[i] + tip;
+        this.tips.push(tip);
+        this.totals.push(total);
+      } else if (this.bills[i] >= 50 && i < 200) {
+        tip = this.bills[i] * 0.15;
+        total = this.bills[i] + tip;
+        this.tips.push(tip);
+        this.totals.push(total);
+      } else {
+        tip = this.bills[i] * 0.1;
+        total = this.bills[i] + tip;
+        this.tips.push(tip);
+        this.totals.push(total);
+      }
+    }
+  },
+  tips: [],
+  totals: [],
+}
+restaurants.billCalculator()
+console.log(restaurants.tips, restaurants.totals)
+
+
+
+var marksBills = [77, 375, 110, 45];
+var tips = [];
+
+for (var i = 0; i < marksBills.length; i++) {
+  if (marksBills[i] < 100) {
+    tip = marksBills[i] * 0.2;
+    total = marksBills[i] + tip;
+    tips.push(tip);
+    // totals.push(total);
+  } else if (marksBills[i] >= 100 && i < 200) {
+    tip = marksBills[i] * 0.10;
+    total = marksBills[i] + tip;
+    tips.push(tip);
+    // totals.push(total);
+  } else {
+    tip = marksBills[i] * 0.25;
+    total = marksBills[i] + tip;
+    tips.push(tip);
+    // totals.push(total);
+  }
+}
+console.log(tips)
+function averageTips(tipsArray) {
+  let totalTips = 0;
+  for (i = 0; i < tipsArray.length; i++) {
+    totalTips = totalTips + tipsArray[i]
+  }
+  return totalTips / tipsArray.length;
+}
+
+console.log(averageTips(tips), averageTips(restaurants.tips))
+whoTippedMore() {
+  
+}
+
+
+
+
+
+
