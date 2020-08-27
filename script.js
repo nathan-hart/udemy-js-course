@@ -229,9 +229,7 @@ function averageTips(tipsArray) {
 }
 
 console.log(averageTips(tips), averageTips(restaurants.tips))
-whoTippedMore() {
-  
-}
+
 
 
 
