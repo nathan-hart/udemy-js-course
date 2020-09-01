@@ -7,7 +7,6 @@ If it is valid, it will produce a data structure called the Abstract Syntax Tree
 It is then converted to Machine Code and run on the Machine.
 */
 
-
 /* Execution Contexts and the Execution Stack *********
 Global Execution Context - code that is not within a function.
 Any code in the GEC will be executed.
@@ -34,7 +33,7 @@ Associated with the Global Object, which in the browser is the Window Object.
 
 // Every time one of these functions is called, it recieves its own EXECUTION CONTEXT.
 // first() // runs in the first() execution context.  And so on and so forth.  They run on top of each other
-// in the order that they are called (pushed onto the stack).  
+// in the order that they are called (pushed onto the stack).
 // After function RETURNS (ends), it is popped off the stack, and then the second function is popped off, and then the first.
 
 //  The Execution Context Object contains:
@@ -61,37 +60,22 @@ Associated with the Global Object, which in the browser is the Window Object.
 ///////////////////////////////////////
 // Lecture: Hoisting
 
-calcAge(1996)
-// We can first use function and then declare it
-function calcAge(year) {
-    console.log(2020 - year)
-}
+// calcAge(1996);
+// // We can first use function and then declare it
+// function calcAge(year) {
+//   console.log(2020 - year);
+// }
 
+// // function EXPRESSION
+// calcRetire(1991);
+// // Here it does not work - hoisting only works for function declarations
 
-// function EXPRESSION
-calcRetire(1991) 
-// Here it does not work - hoisting only works for function declarations
-
-var calcRetire = function (year) {
-    console.log(65 - (2020 - year))
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
+// var calcRetire = function (year) {
+//   console.log(65 - (2020 - year));
+// };
 
 ///////////////////////////////////////
 // Lecture: Scoping
-
 
 // First scoping example
 
@@ -109,8 +93,6 @@ function first() {
     }
 }
 */
-
-
 
 // Example to show the differece between execution stack and scope chain
 
@@ -134,17 +116,22 @@ function third() {
 }
 */
 
+/* Scope */
+// Scope of vars below can be accessed by child functions - they can access parent vars.  They first "search" for the var in their own current scope, 
+// only if not found do they then look for the var in parent/global scopes
+var a = "hello";
+first();
 
+function first() {
+  var b = "Hi";
+  second();
 
+  function second() {
+    var c = "hey";
+    var a = "do"
+    console.log(a + b + c);
+  }
+}
+// Scope chain only works upwards
 ///////////////////////////////////////
 // Lecture: The this keyword
-
-
-
-
-
-
-
-
-
-
