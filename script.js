@@ -119,19 +119,31 @@ function third() {
 /* Scope */
 // Scope of vars below can be accessed by child functions - they can access parent vars.  They first "search" for the var in their own current scope, 
 // only if not found do they then look for the var in parent/global scopes
-var a = "hello";
-first();
+// var a = "hello";
+// first();
 
-function first() {
-  var b = "Hi";
-  second();
+// function first() {
+//   var b = "Hi";
+//   second();
 
-  function second() {
-    var c = "hey";
-    var a = "do"
-    console.log(a + b + c);
-  }
-}
-// Scope chain only works upwards
+//   function second() {
+//     var c = "hey";
+//     var a = "do"
+//     console.log(a + b + c);
+//   }
+// }
+// Scope chain only works upwards and is not the same as thee execution stack, which defines the order in which functions are called - lexically.
 ///////////////////////////////////////
+
+
 // Lecture: The this keyword
+// Every execution context gets a "this" keyword, stored in execution context object.
+// The this keyword is not assigned a value until a function where it is defined is called.
+
+// console.table(globalThis) // same as this in global context
+// console.log(this)
+
+function calcAge(year) {
+  console.log(2020-year);
+  console.log(this)
+}
